@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lista de tareas</title>
+	<link rel="stylesheet" href="/css/bootstrap-3.4.1-dist/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/bootstrap-3.4.1-dist/css/bootstrap-theme.css">
+
+	<script type="text/javascript" src="/css/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+
+	<script type="text/javascript" src="/js/jquery.js"></script>
+</head>
+<body class="container">
+	<div class="jumbotron">
+		<h1>Lista de tareas</h1>
+		<ul>
+			<% tareas.forEach(function(tarea,id){%>
+			<li><%= tarea %> <a class='badge' href="/borrar/<%=id%>">X</a></li>
+			
+			<% }) %>
+		</ul>
+		<form action="adicionar/" method="post">
+			<p>
+				<label for="nuevaTarea">Nueva Tarea</label>
+				<input type="text" name="nuevaTarea" autofocus="true" id="nuevaTarea">
+
+				<button class="btn btn-lg btn-success" type="submit">Listar</button>
+			</p>
+		</form>
+	</div>
+</body>
+</html>
